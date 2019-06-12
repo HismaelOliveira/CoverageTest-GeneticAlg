@@ -3,7 +3,7 @@ from time import time
 from math import ceil
 from random import random, randint, sample
 import utils
-from TestCoverage import TestCoverage
+import TestCoverage
 
 class Gene:
     def __init__(self, name, value):
