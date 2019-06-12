@@ -1,12 +1,13 @@
 import GeneticAlg as ga
 import pandas as pd
-from random import random
+from random import *
 
-def get_genes_from(fn, dt):
+def get_genes_from(fn):
     df = pd.read_csv(fn)
+    print(df)
+    genes = []
 
-    genes = [ga.Gene(row['variavel'], row['tipo'](random(row['minValue'], row['maxValue'])))
-             for _, row in df.iterrows()]
+    genes = [ga.Gene(row['variavel'], int(randrange(float(row['minValue']), float(row['maxValue'])))) for _, row in df.iterrows()]
 
     return genes
 

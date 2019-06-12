@@ -32,7 +32,8 @@ class Individual:
     @property
     def fitness(self):
         if self.__fitness == 0.0:
-            x = [a.value for a in genes]
+            x = [a.value for a in self.genes]
+            print(x)
             self.__fitness = TestCoverage.test_arq(x)
         return self.__fitness
 
