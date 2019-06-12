@@ -13,4 +13,4 @@ mut_rate = 0.02
 genes = utils.get_genes_from(variaveis)
 history = ga.run_ga(genes, pop_size, n_gen, tourn_size, mut_rate)
 
-utils.plot(history['cost'][0], history['route'])
+utils.plot(history['testCase'])

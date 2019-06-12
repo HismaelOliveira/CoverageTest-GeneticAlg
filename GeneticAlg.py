@@ -3,6 +3,7 @@ from time import time
 from math import ceil
 from random import random, randint, sample
 import utils
+from TestCoverage import TestCoverage
 
 class Gene:
     def __init__(self, name, value):
@@ -31,7 +32,8 @@ class Individual:
     @property
     def fitness(self):
         if self.__fitness == 0.0:
-            self.__fitness = #qnt de nós cobertos
+            x = [a.value for a in genes]
+            self.__fitness = TestCoverage.test_arq(x)
         return self.__fitness
 
 class Population:
@@ -140,6 +142,6 @@ def run_ga(genes, pop_size, n_gen, tourn_size, mut_rate):
 
     history['generations'] = generations
     history['total_time'] = total_time
-    history['route'] = population.get_fittest()
+    history['testCase'] = population.get_fittest()
 
     return history

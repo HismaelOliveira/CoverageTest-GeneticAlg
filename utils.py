@@ -10,7 +10,7 @@ def get_genes_from(fn, dt):
 
     return genes
 
-def plot(cost, individual):
+def plot(individual):
     print()
     print('-- Security-GA -- Caso de Teste ')
 
