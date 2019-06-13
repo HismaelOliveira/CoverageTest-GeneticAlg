@@ -1,4 +1,4 @@
-import func
+import func1 as func
 import sys
 import os
 
@@ -8,7 +8,7 @@ def test_func():
     y=int(sys.argv[2])
     z=int(sys.argv[3])
     w=int(sys.argv[4])
-    soma = func.test_soma(x,y,z,w)
+    soma = func.test_func(x,y,z,w)
 
 
 test_func()
