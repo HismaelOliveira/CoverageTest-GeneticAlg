@@ -1,4 +1,4 @@
-import func
+import func1 as func
 import sys
 import os
 
