@@ -5,10 +5,10 @@ import GeneticAlg as ga
 from datetime import datetime
 
 variaveis = 'variaveis.csv'
-pop_size = 500
-n_gen = 200
-tourn_size = 25
-mut_rate = 0.02
+pop_size = 20
+n_gen = 10
+tourn_size = 5
+mut_rate = 0.05
 
 genes = utils.get_genes_from(variaveis)
 history = ga.run_ga(genes, pop_size, n_gen, tourn_size, mut_rate)

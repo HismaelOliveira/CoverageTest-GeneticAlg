@@ -17,8 +17,8 @@ def plot(individual):
 
 
     for p in individual.genes:
-        print(p.name+"  ")
+        print(p.name+"  "+str(p.value))
     print()
     print('------------------------')
-    print('Fitness: ', individual.__fitness)
+    print('Fitness: ', individual.fitness)
     print('------------------------')

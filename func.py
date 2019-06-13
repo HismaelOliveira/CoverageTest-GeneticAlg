@@ -1,27 +1,27 @@
 def test_soma(x,y,z,w):
     if x > y and x>z:
-        print(x)
+        #print(x)
         if x < 2*y:
-            print(2*y)
+            print()
         else:
-            print(3*z)
+            print()
 
         if x> w:
-            print(x)
+            print()
         else:
-            print(w*2)
+            print()
     if y > x:
-        print(y)
+        print()
 
     if y>w:
-        print(w)
+        print()
     else:
-        print(2*y)
+        print()
 
     if x == z:
-        print(z)
+        print()
     if z>x:
-        print(2*z)
+        print()
     soma = x+y+z+w
 
     return soma

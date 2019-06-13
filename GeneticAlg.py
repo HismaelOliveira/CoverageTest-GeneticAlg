@@ -1,4 +1,4 @@
-from sys import maxsize
+#from sys import minsize
 from time import time
 from math import ceil
 from random import random, randint, sample
@@ -14,6 +14,7 @@ class Individual:
     def __init__(self, genes):
         assert(len(genes)>3)
         self.genes = genes
+        self.__fitness = 0.0
         self.__reset_params()
 
     def __reset_params(self):
@@ -58,7 +59,7 @@ class Population:
     def get_fittest(self):
         fittest = self.individuals[0]
         for entrie in self.individuals:
-            if entrie.fitness < fittest.fitness:
+            if entrie.fitness > fittest.fitness:
                 fittest = entrie
         return fittest
 
@@ -120,17 +121,17 @@ def selection(population, competitors_n):
 
 def run_ga(genes, pop_size, n_gen, tourn_size, mut_rate):
     population = Population.gen_individuals(pop_size, genes)
-    history = {'cost': [population.get_fittest().__fitness]}
-    counter, generations, min_cost = 0, 0, maxsize
+    history = {'cost': [population.get_fittest().fitness]}
+    counter, generations, max_cost = 0, 0, -100
 
     print("-- Security-GA -- Inicializando Evolução...")
     start_time = time()
     while generations < n_gen:
         population = evolve(population, tourn_size, mut_rate)
-        cost = population.get_fittest().__fitness
-
-        if cost < min_cost:
-            counter, min_cost = 0, cost
+        cost = population.get_fittest().fitness
+        print(cost)
+        if int(cost) > int(max_cost):
+            counter, max_cost = 0, cost
         else:
             counter += 1
 
